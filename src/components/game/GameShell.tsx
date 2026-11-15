@@ -34,6 +34,7 @@ import { PauseModal } from './PauseModal';
 import { PixelButton, PixelIcon, PixelWindow } from './PixelUi';
 import { StageSelectModal } from './StageSelectModal';
 import { VictoryModal } from './VictoryModal';
+import { CinematicFX } from './CinematicFX';
 
 function formatTimer(sec: number): string {
   const m = Math.floor(sec / 60);
@@ -44,6 +45,7 @@ function formatTimer(sec: number): string {
 export const GameShell: React.FC = () => {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const haloRef = useRef<HTMLCanvasElement | null>(null);
   const bloomRef = useRef<HTMLCanvasElement | null>(null);
   const engineRef = useRef<GameEngine | null>(null);
   const rendererRef = useRef<PixelRenderer | null>(null);
@@ -477,6 +479,15 @@ export const GameShell: React.FC = () => {
             bctx.drawImage(canvas, 0, 0, bloom.width, bloom.height);
             bctx.filter = 'none';
           }
+          // Wide cinematic halo: only the brightest highlights bleed far
+          const halo = haloRef.current;
+          const hctx = halo?.getContext('2d');
+          if (halo && hctx) {
+            hctx.globalCompositeOperation = 'copy';
+            hctx.filter = 'brightness(0.9) contrast(2.6) saturate(1.8) blur(3px)';
+            hctx.drawImage(canvas, 0, 0, halo.width, halo.height);
+            hctx.filter = 'none';
+          }
         }
       }
       rafId = requestAnimationFrame(frame);
@@ -617,7 +628,17 @@ export const GameShell: React.FC = () => {
           aria-hidden="true"
           className="game-bloom pointer-events-none absolute inset-0 h-full w-full object-contain"
         />
+        <canvas
+          ref={haloRef}
+          width={64}
+          height={36}
+          aria-hidden="true"
+          className="game-halo pointer-events-none absolute inset-0 h-full w-full object-contain"
+        />
+        <CinematicFX playing={hud?.mode !== 'title'} />
         <div aria-hidden="true" className="game-lens pointer-events-none absolute inset-0" />
+        <div aria-hidden="true" className="game-grain pointer-events-none absolute inset-0" />
+        <div aria-hidden="true" className={`game-letterbox pointer-events-none absolute inset-0 ${hud?.mode === 'title' ? 'is-open' : ''}`} />
       </div>
 
       {/* TITLE SCREEN OVERLAY */}
