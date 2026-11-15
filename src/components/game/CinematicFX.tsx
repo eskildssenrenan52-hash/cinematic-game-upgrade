@@ -70,7 +70,7 @@ export function CinematicFX({ playing }: { playing: boolean }) {
       const target = playingRef.current ? 90 : 130;
       while (motes.length < target) motes.push(spawn(false));
       for (let i = motes.length - 1; i >= 0; i--) {
-        const m = motes[i];
+        const m = motes[i]!;
         m.life += dt;
         m.x += (m.vx + Math.sin(t * 1.3 + m.y * 0.02) * 10) * dt;
         m.y += m.vy * dt;
