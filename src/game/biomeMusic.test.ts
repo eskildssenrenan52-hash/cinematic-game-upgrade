@@ -1,5 +1,5 @@
 // @ts-nocheck -- imported game code, written for a looser TS config
-import test from 'node:test';
+import test from 'vitest';
 import assert from 'node:assert/strict';
 import {
   BIOME_MUSIC_SCORES,

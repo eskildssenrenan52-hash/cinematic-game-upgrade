@@ -1,6 +1,6 @@
 // @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
-import { test } from 'node:test';
+import { test } from 'vitest';
 import assert from 'node:assert/strict';
 import { GameEngine } from './engine';
 import {
