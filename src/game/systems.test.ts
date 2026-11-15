@@ -1,7 +1,7 @@
-// @vitest-environment node
 // @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
-import { test } from 'vitest';
+import { test, beforeEach } from 'vitest';
+beforeEach(() => window.localStorage.clear());
 import assert from 'node:assert/strict';
 import { GameEngine } from './engine';
 import {

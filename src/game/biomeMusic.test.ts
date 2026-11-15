@@ -1,4 +1,3 @@
-// @vitest-environment node
 // @ts-nocheck -- imported game code, written for a looser TS config
 import { test } from 'vitest';
 import assert from 'node:assert/strict';

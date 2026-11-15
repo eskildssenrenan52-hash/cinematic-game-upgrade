@@ -1,4 +1,3 @@
-// @vitest-environment node
 // @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
 import { test } from 'vitest';
