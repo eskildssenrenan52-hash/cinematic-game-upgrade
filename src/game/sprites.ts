@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
 // Hand-authored multi-frame Pixel Art Sprite Library & Offscreen Canvas Cache
 import { getHeroSkinDef, type HeroId } from './heroes';

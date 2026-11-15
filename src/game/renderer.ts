@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
 import { drawEnhancedBackdrop, drawEnhancedForeground } from './backdropRenderer';
 import { GameEngine, LiveEntity } from './engine';

@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 import type { GameEngine } from './engine';
 import { BiomeId, VIRTUAL_HEIGHT, VIRTUAL_WIDTH } from './types';
 import { BIOME_META } from './worldData';

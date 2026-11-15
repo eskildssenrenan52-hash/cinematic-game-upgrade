@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — pure musical composition data & helper math for all 20 biomes
 import { BiomeId } from './types';
 

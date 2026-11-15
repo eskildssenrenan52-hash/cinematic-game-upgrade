@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
 import React from 'react';
 import { ChapterDef, HudSnapshot, PlayModeId } from '../../game/types';

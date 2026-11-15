@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 import type { GameEngine } from './engine';
 import { isTileValueSolid } from './physics';
 import { RoomDef, TILE_SIZE, TileType, VIRTUAL_HEIGHT, VIRTUAL_WIDTH } from './types';

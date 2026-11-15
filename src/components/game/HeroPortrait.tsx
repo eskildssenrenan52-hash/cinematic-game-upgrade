@@ -1,3 +1,4 @@
+// @ts-nocheck -- imported game code, written for a looser TS config
 // @ts-nocheck — imported game code, typed under the original looser tsconfig
 import React, { useEffect, useRef } from 'react';
 import { getHeroDef, getHeroSkinDef, HeroId } from '../../game/heroes';
